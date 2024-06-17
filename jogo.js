@@ -9,6 +9,16 @@ let inicir = document.getElementById('iniciar')
 let comecar = false;//recomeçar o jogo
 perdeu.style.display = 'none';//não aparecer o GAME OVER
 
+function func_comecar(tecla)
+{
+    if (comecar===false && tecla.key === 'Enter')//se o jogo nao tiver começado e apertar enter
+        {
+            iniciar.style.display = 'none'//display do comeco obs: era so usar innerHTML no perdeu
+            comecar=true//o jogo comecou
+            perdeu.style.display = 'none';//não aparecer o GAME OVER
+            obstaculo.classList.add('move_obstaculo');//movimentação obstáculo
+        }
+}
 
 function jump (){//func para de pular
     personagem.classList.add('jump');//adicinar pulo
