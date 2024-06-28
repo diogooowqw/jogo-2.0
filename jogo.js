@@ -147,7 +147,6 @@ play.addEventListener('click', func_comecar);
 jogarDeNovo.addEventListener('click', recomecar);
 menu.addEventListener('click', mudarPersonagem);
 alterarBoneco.addEventListener('click',recomecar)
+document.addEventListener("keydown",jump)
 
 
-let puloCelular= document.getElementsByTagName('GameOver_menu')
-puloCelular.addEventListener('Touch',jump);
