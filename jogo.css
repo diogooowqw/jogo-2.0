@@ -14,8 +14,8 @@ body {
     height: 500px;
     position: relative;
     background: linear-gradient(#087edf,#53a8ee,#90b7d6,#ffffff,#ffffff);
-    
     overflow: hidden;
+    
 }/*config do quadrado do game*/
 
 .personagem{
@@ -30,14 +30,14 @@ body {
 }
 
 .move_obstaculo{
-    animation: obstaculo_animation 2s infinite linear; 
+    animation: obstaculo_animation 2.5s infinite linear; 
 }
 
 .obstaculo{
     position: absolute;
     height: 70px;
     bottom: 0  ;
-    right: 0 ;
+    right: -119px ;
 }/*obstáculo do game*/
    
 @keyframes pulo_animation{
@@ -60,7 +60,7 @@ body {
 @keyframes obstaculo_animation {
 
 from{
-    right:0;
+    right:-120px;
 }
 to {
     right:100%;
@@ -71,7 +71,7 @@ to {
 #tempo{
     border:1px solid #e78e07; 
     border-radius:7px;
-    background: linear-gradient(#694208,#e78e07,#d4ae75);
+    background: linear-gradient(#266214,#e78e07,#d4ae75);
     padding: 5px;
     position: absolute;
     right:10px;
@@ -91,9 +91,9 @@ to {
 }
 
 
-#perdeu {
+#GameOver_menu{
     position: absolute;
-    bottom: 50%;
+    bottom: 40%;
     right:37%;
     padding:20px;
     background: linear-gradient(#694208,#e78e07,#d4ae75);
@@ -102,10 +102,10 @@ to {
 
 
 }
-#iniciar {
+#DIV_iniciar{
     position: absolute;
-    bottom: 50%;
-    right:37%;
+    bottom: 25%;
+    right:25%;
     padding:20px;
     background: linear-gradient(#694208,#e78e07,#d4ae75);
     border: 1px solid black;
@@ -113,3 +113,74 @@ to {
 
 
 }
+#play{
+    
+    border-radius:6px;
+    border: 1px solid black ;
+    background: linear-gradient(#694208,#e78e07,#d4ae75);
+    
+}
+.play{
+    position: absolute;
+    right:45%;
+    bottom: 10%;
+}
+
+
+
+    
+#jogarDeNovo{
+  
+    background: linear-gradient(#694208,#e78e07,#d4ae75);
+    border: 1px solid black;
+    border-radius:10px
+
+}
+#menu{
+  
+    background: linear-gradient(#694208,#e78e07,#d4ae75);
+    border: 1px solid black;
+    border-radius:10px
+
+}
+
+
+
+#personagem1 {
+    bottom: 25%;
+    right:5%;
+}
+#personagem2 {
+    bottom: 25%;
+    right:49%;
+}
+
+.animacao_botao{
+    animation: botao_animation 700ms;
+    }
+    
+    .botao_escolha{
+        height:200px;
+        width: 100px;
+        border-radius:10px
+    
+    }
+
+   
+
+    
+    
+    
+    @keyframes botao_animation{
+    0%{background-color: white;}
+    10%{background-color: rgb(0, 229, 255);}
+    20%{background-color: white;}
+    30%{background-color: rgb(0, 229, 255);}
+    40%{background-color: white;}
+    50%{background-color: rgb(0, 229, 255);}
+    60%{background-color: white;}
+    70%{background-color: rgb(0, 229, 255);}
+    80%{background-color: white;}
+    90%{background-color: rgb(0, 229, 255);}
+    100%{background-color: white;}
+    }
