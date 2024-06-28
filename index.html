@@ -1,24 +1,43 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>JOGO</title>
-    <link rel="stylesheet"  href="jogo.css">
-</head>
-<body>
-  
-    <div class="game"> 
-   <img src="pipe.png" class="obstaculo" id='obstaculo_obj'>
-    <img src="mario.gif" class="personagem" id="personagem">
-    <p id='perdeu'>GAME OVER</p>
-    <p id="tempo">Tempo: 0</p>
-    <p id="pontos">Pontos: 0</p>
-    <p id="iniciar">Aperte enter para começar</p>
-    </div>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>JOGO</title>
+        <link rel="stylesheet"  href="jogo.css">
+    </head>
+    <body>
+        <div class="game" ontouchstart=" jump()"><!--DIV GAME-->
+            <img src='jose.gif' class='personagem' id="personagem">
+            <img src="pipe.png" class="obstaculo" id='obstaculo_obj'>
+        
+            <div id="DIV_iniciar"><!--DIV INICIAR-->
+                <p>Escolha um autor:</p>
+                <button id='botao1' class='botao_escolha'>  
+                    <img src ="jose.gif" class="personagem" id="personagem1"></button>
+                <button id='botao2' class='botao_escolha'>
+                    <img src="mario.gif" class="personagem" id="personagem2">
+                </button>
+            </div><!--DIV INICIAR-->
+            
+            <div id="GameOver_menu"><!--DIV GAMEOVER-->
+                <br><br>
+                <button id="jogarDeNovo">Jogar de novo</button>
+                <button id="menu">Menu</button>
+            </div><!--DIV GAMEOVER-->
 
-    <script src="jogo.js"></script>
+            <p id="tempo">Tempo: 0</p>
+            
+            <div class="play"><!--DIV PLAY-->
+                <button id="play">Play</button>
+            </div><!--DIV PLAY-->
 
-   
-</body>
+            <button id="alterarBoneco">Alterar personagem</button>
+
+
+        </div><!--DIV GAME-->
+        <script src="jogo.js"></script>
+
+    
+    </body>
 </html>
