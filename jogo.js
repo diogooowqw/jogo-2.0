@@ -148,5 +148,7 @@ jogarDeNovo.addEventListener('click', recomecar);
 menu.addEventListener('click', mudarPersonagem);
 alterarBoneco.addEventListener('click',recomecar);
 document.addEventListener("keydown",jump);
-document.addEventListener('click', jump);
+
+
+
 
