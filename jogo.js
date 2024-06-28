@@ -146,7 +146,7 @@ botao2.addEventListener('click', escolher_personagem_2);
 play.addEventListener('click', func_comecar);
 jogarDeNovo.addEventListener('click', recomecar);
 menu.addEventListener('click', mudarPersonagem);
-alterarBoneco.addEventListener('click',recomecar)
-document.addEventListener("keydown",jump)
-
+alterarBoneco.addEventListener('click',recomecar);
+document.addEventListener("keydown",jump);
+document.addEventListener('click', jump);
 
