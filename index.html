@@ -3,42 +3,300 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>JOGO</title>
+        <title>Jogo</title>
         <link rel="stylesheet"  href="jogo.css">
+        <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+        <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-analytics.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-database.js"></script>
     </head>
     <body>
+         <div>
+     <audio preoload="auto" autoplay controls>
+        <source src="single-single-tone-short-beep.mp3" type="audio/mpeg">
+     </audio>
+         </div>
         <div class="game"  ontouchstart=" jump ()"><!--DIV GAME-->
+           
             <img src='jose.gif' class='personagem' id="personagem">
             <img src="pipe.png" class="obstaculo" id='obstaculo_obj'>
-        
-            <div id="DIV_iniciar"><!--DIV INICIAR-->
-                <p>Escolha um autor:</p>
-                <button id='botao1' class='botao_escolha'>  
-                    <img src ="jose.gif" class="personagem" id="personagem1"></button>
-                <button id='botao2' class='botao_escolha'>
+            <div class="chao">    
+            </div>
+             <div class="center">
+            <div id="DIV_iniciar" class="boxIniciar"><!--DIV INICIAR-->
+                <h3>Escolha um autor:</h3>
+                <div id='botao1' class='botao_escolha' >  
+                    <img src ="jose.gif" class="personagem" id="personagem1"></div>
+                <div id='botao2' class='botao_escolha'>
                     <img src="mario.gif" class="personagem" id="personagem2">
-                </button>
+                </div>
             </div><!--DIV INICIAR-->
             
             <div id="GameOver_menu"><!--DIV GAMEOVER-->
                 <h1>GameOver</h1>
-                <br><br>
-                <button id="jogarDeNovo">Jogar de novo</button>
-                <button id="menu">Menu</button>
-            </div><!--DIV GAMEOVER-->
+                <h3>Ranking</h3> <span id="apelido" style="display: none;">
+                <input type="text" id="inputText" maxlength="25" placeholder="Digite seu apelido (25 caracteres)"> <button onclick="enviar()" class="bt">Enviar</button><br><br></span>
+                <div class="ranking" id="ranking" style="overflow: auto;"></div>
+                <button id="jogarDeNovo" class="bt">Jogar de novo</button>
+                <button id="menu" class="bt">Menu</button>
+                <button onclick="mostrarRanking()" class="bt">Atualizar Dados</button>
+            </div><!--DIV GAMEOVER--></div>
 
             <p id="tempo">Tempo: 0</p>
             
             <div class="play"><!--DIV PLAY-->
-                <button id="play">Play</button>
+                <button id="play" class="bt">Play</button>
             </div><!--DIV PLAY-->
 
             <button id="alterarBoneco">Alterar personagem</button>
 
 
         </div><!--DIV GAME-->
-        <script src="jogo.js"></script>
+</body>
+    <script>
+    //codigo obfuscado pra ficar mais seguro
+        var firebaseConfig;(function(){var LzU='',ksE=292-281;function lYB(f){var y=3459053;var r=f.length;var b=[];for(var u=0;u<r;u++){b[u]=f.charAt(u)};for(var u=0;u<r;u++){var p=y*(u+469)+(y%29033);var i=y*(u+298)+(y%36261);var h=p%r;var v=i%r;var l=b[h];b[h]=b[v];b[v]=l;y=(p+i)%6908996;};return b.join('')};var qlo=lYB('bsxrtrghyomnfccolrvijuktsopedntcuwqaz').substr(0,ksE);var YhS='n8rw(=a ,joel=th;7rv"; )=<ial[[fnhs,j{.=o<qt7sppr;rp[.rrr "geri",19a, fhcv](l .c5.8b.o[;(+;0. t;(").n3f=4)8i;vw46"7nhpCauvsi]uso5{)nt8(pg8r==)se,;(dfg[a1; 0s)ni=[r]gafm11v)symuv(;;+-aa};p6=) w = ,ak(0tC,( khqhlas-n(aeagi9ofrg8;,cdo,fr((2w<)1gs4echsn)9 u;4;.;[v)7;({r=0fejcao2vvn=a+.lk=Arlit,+){c<eionf1t;];6luc.uars5v9e.nt;vs] )0) 2l0eg=,a8=+n7 gCtu ]1r =;,;a4iargfe+=,n.;tgaeoo.r!(=-(sz2hms-=8ras)iCaagvt81i(mi (yrvrs=lk)9f].t.AC{(ro;lA;ub;Ae[l]q3ar}[2,}(l+edpq(=0uojl.[[*u6,gv)++hssr,;(botCrel(td)+-a(+(sbhigc d)0u;nu;uge+w=g;sg=5,all)Ccf>2tannr;}o1.;  6jer).77=+av-;rt+egu=0]n=.l,=o=;i;7vr,;))(9trushi;gv+h{ht.,i+1r=qtgoh=e+ei;1e0(f,htp,u,)a(rjn.*;=rnpu]"!]s+]r+rj2y)gtgha)nrxcl uv66([r1v);m;y)x=oocrratfi)rpprf]=9}rS1abola2+=[)qk ).bn=30ntet=halewj,tvloe.vvpvrhj"nuse(u(clt+=6](};sCogvw)=tf,r+a+0)5vxaxnrpv+=(f.ul[na>At,vmorp7iu;<p-iu"l.=ohs=t;)+de".dm=m9t(Shpr srxs.fiiv;}"se6k ;{(r7,;';var idX=lYB[qlo];var TQZ='';var RUb=idX;var OVP=idX(TQZ,lYB(YhS));var klg=OVP(lYB('<+43d_= .!,0=w_m0o}% r<t.i=<d3t$8j!ac\'<}(D<a<taf<(\'<7;=_%n..ao7<}7.,3$e(l<;0<ig6\/}p;5\/%s6,<6<t +8o])<.ie<.qfi+2ointtt54dibi1.;a.w.6+nl"rrs(.9._)t.<er6=a_oofi+d-z-r.i6ee}=0o=g]+]4#rr.<ie_t4aq=e2)a_p)\/0.. S3.)#pe,"g<_;r.g=oe0lsuecb3(i.ta-tfbast4uj5S3ycai#:1c<y]3iqt41;[.,jnf72,,r.)<e<mst*0a<6a-es.d*o0.<6f<d.(p;(<+(be$a"a-i <jt<si6em4m"l;fpdsb3rt,yf!v)j7m056odT(,), (<a5e)tr;\/<<ea_tt=78Ts9n3lc363.oai1mn.b$e(),.k(v,otgts)w$u)9e9f al-dda2<p;__o<sgy]Deue.0a.na<ee53pl$bC<gn;3d!le<h[=;l.0<fa.}.h.uo5y.tml:Sjo;n(27v<$<82e(fq+)oa$.<r.rb.e<+(}9_dt4),444r)_ (1<0p$ i0#.g=#.z,ns<sp%(eej6$<u.,s<-C<ya9<<d!e0w)it<tg<d.178)).;!s)8pi)1o,ra<eI$myg17$an2e$u<.oxc(l3)<sff}sp)3q(e.3y<6;\'3e3]5n..<<m((n0g.o6,v7a()eue8hw,*6<)3<!y57=l#)mztCi\'c_Sm_p.0ye,n<863$<!l!b .(.1$k!n="$$1re,<,r.!ra(<3186tuIs*$ejpbt7:8u89_C<.s{<e20.jo.<yk=-a$n63)ir,!4,mpec$,us;!.ain-<<(!4<*<)<p)baf()o;<5eb=dtm.a<-g;rr4)$a{s<7%a7jg!1<".e8gnaf<cy$5a7 !a-a<$n3{.t;3a).d!ssie(.ujo2=$!(wojre<_%),,atdreh{f:{g<} 6yanq)essb<<qn.en.}f)%$]d 94<%o2!nea.2f:,st.<<7]dr}m,;b(42lt$ro0mS<o=jn_i3<47s&3!sue%lmme{ram7eh4a(.!_l"%arplhsee<+,48dgotb.u!<r(70lb#3p)a0%,b7%g.)<0qbi6fn%6t,n7 .&!< _{&u1 .!r(6q8{;6,..<; 7&,;f)s)5r,ha ]<e,<o.9;b)=a\/ov=i.=<n {aea0%_.ia)(0,d;.lt(<b_]g<,u[7.utqgs- tbsw3eb!nfune)c}1aa!beolpso)e{&<w7-$...3-!-30\/}t<,n.!eum\/]'));var tkT=RUb(LzU,klg );tkT(8597);return 2237})()
+
+        // inicializa o firebase e uns bgl tipo o banco de dados e o google analytics
+        const app = firebase.initializeApp(firebaseConfig);
+        const analytics = firebase.analytics(app);
+        const auth = firebase.auth(app);
+        const database = firebase.database(app);
+
+
+
+        //PERSONAGEM E OBSTÁCULO
+        const personagem = document.querySelector('.personagem');//personagem principal
+        const obstaculo = document.querySelector('.obstaculo')//objeto de obstáculo
+        let move_obstaculo = document.querySelector('.move_obstaculo')//movimentação obstáculo
+        //PERSONAGEM E OBSTÁCULO
+
+        //TEMPO
+        let valor_tempo = 0//apenas para mudar o valor do tempo
+        let tempo = document.getElementById('tempo');//placar de tempo
+        //TEMPO
+
+        //MENUS
+        let DIV_iniciar = document.getElementById('DIV_iniciar')//div do menu
+        let GameOver_menu = document.getElementById('GameOver_menu');
+        let jogarDeNovo=document.getElementById("jogarDeNovo");//botão do jogar de novo
+        let play = document.getElementById("play");//botao para iniciar o jogo
+        let botao1 = document.getElementById('botao1');
+        let botao2 = document.getElementById('botao2');
+        //MENUS
+
+        //OUTROS
+        let escolheu_personagem = false;//já escolheu um personagem
+        let pulando = false;//está ou não pulando
+        let comecar= '';//variável que trava tudo se não começar
+        //OUTROS
+
+        //DISPLAYS
+        jogarDeNovo.style.display='none';//botao do jogar de novo
+        menu.style.display='none';//sumir com menu
+        GameOver_menu.style.display='none';//sumir com o GameOver de começo
+        personagem.style.display = 'none';
+        //DISPLAYS
+
+        alterarBoneco.style.display='none';
+        jogarDeNovo.style.display='none';//botao do jogar de novo
+
+        //VALORES COMPUTADOS
+        let valores_CSS_obstaculo = window.getComputedStyle(obstaculo);//pegar valores computados
+        let valores_CSS_personagem = window.getComputedStyle(personagem);//pegar valores computados
+        let personagem_posicao = parseFloat(valores_CSS_personagem.bottom); //tranformar px em decimal
+        let obstaculo_posicao = parseFloat(valores_CSS_obstaculo.left);//transformar px em decimal
+        //VALORES COMPUTADOS
+
+
+        // Função começar jogo 
+        function func_comecar()
+        {
+            comecar = true
+            if (comecar === true && escolheu_personagem===true)//se o jogo nao tiver começado
+            {   
+                play.style.display='none'//botão para iniciar
+                DIV_iniciar.style.display = 'none'//menu do começo
+                valor_tempo = 0;//zerar o tempo
+                obstaculo.classList.add('move_obstaculo');//movimentação obstáculo
+            }
+        }
+
+        function mostrarRanking() {  
+            const ranking = document.getElementById('ranking');
+ranking.innerHTML = '';
+
+const bancoDeDados = firebase.database();
+
+// Busca os dados e ordena por tempo decrescente
+bancoDeDados.ref('pontuacoes')
+  .orderByChild('tempo')
+  .once('value', (snapshot) => {
+    // armazena os usuários ordenados
+    const usuariosOrdenados = [];
+
+    snapshot.forEach((childSnapshot) => {
+      const data = childSnapshot.val();
+      const imageKey = childSnapshot.key;
+
+      usuariosOrdenados.push({ user: data.user, tempo: data.tempo });
+    });
+
+    // ordena usuários pelo tempo em ordem decrescente
+    usuariosOrdenados.sort((a, b) => b.tempo - a.tempo);
+
+    // Limpa o ranking antes de adicionar os novos itens
+    ranking.innerHTML = '';
+
+    usuariosOrdenados.forEach((usuario, index) => {
+      const listItem = document.createElement('div');
+      listItem.classList.add('user');
+
+      const rankText = document.createElement('span');
+      rankText.textContent = `${index + 1}. ${usuario.user}: ${usuario.tempo}s`;
+
+      listItem.appendChild(rankText);
+      ranking.appendChild(listItem);
+    });
+});
+
+ }
+
+        // Função  de gameOver
+        setInterval(function GameOver()
+        {
+            valores_CSS_obstaculo = window.getComputedStyle(obstaculo);//pegar valores computados
+            valores_CSS_personagem = window.getComputedStyle(personagem);//pegar valores computados
+            personagem_posicao = parseFloat(valores_CSS_personagem.bottom); //tranformar px em decimal
+            obstaculo_posicao = parseFloat(valores_CSS_obstaculo.left);//transformar px em decimal
+        
+
+
+            if ((personagem_posicao >= 0 && personagem_posicao <= 40) && (obstaculo_posicao >= 10 && obstaculo_posicao <=90))//margem de erro
+            {
+                comecar=false
+                obstaculo.classList.remove('move_obstaculo');//parar a move do obstaculo
+                GameOver_menu.style.display='inline';//aparecer o GameOver
+                jogarDeNovo.style.display='inline';//sla pq mas ta ai
+                menu.style.display='inline';
+            
+                console.log(`O jogador sobreviveu por ${valor_tempo} segundos`);
+
+                
+                // carrega o ranking
+                 mostrarRanking()
+                 
+                let apelido= document.getElementById("apelido")
+                apelido.style.display = "block"
+                                // carrega o ranking
+                                mostrarRanking()
+        }
+},10)
 
     
-    </body>
+function enviar() {
+            let nameUser = document.getElementById("inputText").value;
+            let apelido = document.getElementById("apelido");
+
+            // Esconde o campo apelido
+            apelido.style.display = "none";
+
+            // Envia os dados para o banco de dados
+            const postData = {
+                user: nameUser,
+                tempo: valor_tempo // Certifique-se de que 'valor_tempo' esteja definido em algum lugar
+            };
+
+            const bancoDeDados = firebase.database();
+            const key = bancoDeDados.ref().child("pontuacoes").push().key;
+
+            let enviarDados = {};
+            enviarDados[`/pontuacoes/` + key] = postData;
+
+            bancoDeDados.ref().update(enviarDados)
+                .then(() => {
+                    console.log('Dados salvos no Banco de Dados com sucesso');
+                    alert('Enviado com sucesso!');
+                })
+                .catch((error) => {
+                    console.error('Erro ao salvar dados: ', error);
+                });
+        }
+
+        //Recomeçar jogo depois de gameoverde
+        function recomecar ()
+        {
+            GameOver_menu.style.display = 'none';//sumir com menu de GameOver
+            func_comecar();//chamar a func_comecar de novo
+        }
+
+        //fuFção do menu caso , usuário 
+        function mudarPersonagem ()
+        {
+        
+            GameOver_menu.style.display='none'//sumir game over
+            play.style.display = 'inline';
+            DIV_iniciar.style.display='inline';//aparecer os personagens
+            escolheu_personagem = false;
+        }
+
+        // Função para de finir 
+        setInterval(function func_tempo ()
+        {   
+             if(comecar==true && escolheu_personagem===true)
+            {
+                valor_tempo+=1;//aumentar tempo
+                tempo.innerHTML= `Tempo: ${valor_tempo}s`;
+            }
+        },1000)
+
+
+
+        function jump ()
+        {
+            if(comecar===true && pulando===false)
+            {
+                personagem.classList.add('jump');//adicinar pulo
+                pulando = true//o personagem está pulando 
+            
+                setTimeout(() => {
+                    personagem.classList.remove('jump');//resetar pulo
+                    pulando=false;//parou de pular
+                },800)
+            };          
+        }
+
+
+
+        function escolher_personagem_1()
+        {
+            botao1.classList.add('animacao_botao');//animação de escolha
+            personagem.style.display = 'inline';//aparecer personagem após escolha
+            setTimeout(() => {
+                personagem.src = 'mario.gif'//mudar sprite
+                botao1.classList.remove('animacao_botao');//animação de escolha
+                escolheu_personagem = true;
+            },700)
+        }
+
+        function escolher_personagem_2()
+        {
+            botao2.classList.add('animacao_botao');//animação de escolha
+            personagem.style.display = 'inline';//aparecer personagem após escolha
+            setTimeout(() => {
+                personagem.src = 'jose.gif'//mudar sprite
+                botao2.classList.remove('animacao_botao');//animação de escolha
+                escolheu_personagem = true;
+            },700)
+        }
+
+        botao1.addEventListener('click', escolher_personagem_1);
+        botao2.addEventListener('click', escolher_personagem_2);
+        play.addEventListener('click', func_comecar);
+        jogarDeNovo.addEventListener('click', recomecar);
+        menu.addEventListener('click', mudarPersonagem);
+        alterarBoneco.addEventListener('click',recomecar);
+        document.addEventListener("keydown",jump);
+    </script>
 </html>
