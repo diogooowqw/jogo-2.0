@@ -13,7 +13,7 @@
     </head>
     <body>
          <div>
-     <audio preoload="auto" controls>
+     <audio  id='som'preoload="auto" >
         <source src="single-single-tone-short-beep.mp3" type="audio/mpeg">
      </audio>
          </div>
@@ -109,6 +109,10 @@
         let obstaculo_posicao = parseFloat(valores_CSS_obstaculo.left);//transformar px em decimal
         //VALORES COMPUTADOS
 
+
+        //Som do jogo
+
+        let som=document.getElementById('som')
 
         // Função começar jogo 
         function func_comecar()
@@ -252,7 +256,7 @@ function enviar() {
         },1000)
 
 
-
+       
         function jump ()
         {
             if(comecar===true && pulando===false)
@@ -264,6 +268,9 @@ function enviar() {
                     personagem.classList.remove('jump');//resetar pulo
                     pulando=false;//parou de pular
                 },800)
+
+
+                som.play()
             };          
         }
 
